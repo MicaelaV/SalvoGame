@@ -1,0 +1,23 @@
+package com.codeoftheweb.salvo.util;
+
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+
+import java.util.HashMap;
+import java.util.Map;
+
+//task6
+public class Util {
+
+    public static boolean isGuest(Authentication  authentication){
+        return authentication == null || authentication instanceof AnonymousAuthenticationToken;
+    }
+
+    public static Map makeMap(String key, Object  value){
+        Map<String, Object> map = new HashMap<>();
+        map.put(key, value);
+        return map;
+    }
+
+}
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salvo!</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/styleGames.css">
+    <link rel="stylesheet" href="plugins/sweetAlert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="plugins/animate.css/animate.css">
+
+</head>
+<body>
+<div class="container-fluid">
+        <div class="bannerTitle rounded border border-warning">
+            <img class="bannerImageGames" src="img/titlebannersalvo.png">
+        </div>
+        <div id="loginBlock" class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="currentPlayerContainer">
+                            <div class="pb-4">
+                                <img src="img/current.png"> <span id="currentPlayer"></span>
+                            </div>
+                            <form class="form" id="logout-form" onsubmit="return false">
+                                <button type="submit" class="btn btn-warning" id="logout-button">Log out</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Alerts -->
+        <div id="signupSuccess"></div>
+        <div id="errorSignup"></div>
+        <div id="loginSuccess"></div>
+        <div id="logoutSuccess"></div>
+        <div id="gameCreatedSuccess"></div>
+        <div id="gameJoinedSuccess"></div>
+        <div id="loginFailed"></div>
+    </div>
+
+    <section>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-lg-4 pt-5">
+                <div class="container login-fondo rounded border border-warning">
+                    <div class="pb-4 pt-4">
+                        <form class="textCenter form" id="createGame" onsubmit="return false">
+                            <div class="pb-4 pt-4">
+                                <h2 class="orangeColor">CREATE NEW GAME</h2>
+                            </div>
+                            <div class="pb-4 pt-4">
+                                <button type="submit" class="btn btn-outline-warning">NEW GAME</button>
+                            </div>
+                        </form>
+                    </div>
+                    <form class="form-inline" id="login-form" onsubmit="return false">
+                            <div class="col-sm-12 pt-2 text-center">
+                                <h2 class="orangeColor">Login or Register</h2>
+                            </div>
+
+                        <!--<div class="row">
+                            <div class="col-sm-2 pt-4">
+                                <label for="username">Name:</label>
+                            </div>-->
+                            <div class="col-sm-12 pt-4 text-center">
+                                <input class="form-control" id="username" type="email" name="username" placeholder="Email" required>
+                            </div>
+                        <!--</div>-->
+                        <!--<div class="row">
+                            <div class="col-sm-2 pt-4">
+                                <label for="password">Password:</label>
+                            </div>-->
+                            <div class="col-sm-12 pt-4 pb-4 text-center">
+                                <input class="form-control" id="password" type="password" name="password" placeholder="Password" required>
+                            </div>
+                        <!--</div>-->
+                        <br>
+                        <div class="col-sm-12 pb-5">
+                            <div class="row">
+                                <div class="col-sm-6 pb-4 text-center">
+                                    <input type="submit" class="form-control submitbutton btn btn-outline-warning" name="login" value="Login" />
+                                </div>
+
+                                <div class="col-sm-6 pb-4 text-center">
+                                    <input type="submit" class="form-control submitbutton btn btn-outline-warning" name="signup" value="Sign Up" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-8 pt-4 pb-4">
+                <div class="pb-4 pt-4">
+                    <div class="textCenter orangeColor"><h1>GAME LIST</h1></div>
+                </div>
+
+                <div>
+                    <table class="table table-striped table-warning" id="gamesList">
+                        <thead>
+                        <tr><th class="textCenter">ID</th><th>Created</th><th>Player 1</th><th>Player 2</th><th class="textCenter">Actions</th></tr>
+                        </thead>
+                        <tbody class="table-dark styleTable">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pb-4 pt-5">
+                    <div class="textCenter orangeColor"><h1>LEADERBOARD</h1></div>
+                </div>
+                <div>
+                    <table class="table table-striped table-warning" id="scoreBoard">
+                        <thead>
+                        <tr><th>Player</th><th class="textCenter">Total Score</th><th class="textCenter">Won</th><th class="textCenter">Lost</th><th class="textCenter">Tied</th></tr>
+                        </thead>
+                        <tbody class="table-dark styleTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+<br>
+</div>
+
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!--    Plugin sweet Alert 2  -->
+    <script src="plugins/sweetAlert2/sweetalert2.all.min.js"></script>
+    <script src="./js/games.js"></script>
+
+</body>
+</html>

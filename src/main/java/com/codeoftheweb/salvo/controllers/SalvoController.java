@@ -266,14 +266,14 @@ public class SalvoController {
         return  new ResponseEntity<>(makeMap("Error","You can´t play again"), HttpStatus.CREATED);
     }
 
-    /*public String getState(GamePlayer gamePlayer, GamePlayer  opponent){
+    public String getState(GamePlayer gamePlayer, GamePlayer  opponent){
         //Verifica si lista de barcos esta vacia
         if(gamePlayer.getShips().isEmpty()){
             return "PLACESHIPS";
         }
         //Verifica si solo es un jugador
         if(gamePlayer.getGame().getGamePlayers().size() == 1){
-            return "WAITING";
+            return "WAITINGFOROPP";
         }
         //estado "Play" task4
         if(gamePlayer.getGame().getGamePlayers().size() == 2 && gamePlayer.getId() < opponent.getId()){
@@ -284,10 +284,10 @@ public class SalvoController {
             return "WAIT";
         }
         return "UNDEFINED";
-    }*/
+    }
 
 
-    //Task5 calcular el daño realizado en una batalla
+    //calcular el daño realizado
     private List<Map> getHits(GamePlayer self, GamePlayer opponent) {
 
         List<Map> hits = new ArrayList<>();
@@ -379,15 +379,13 @@ public class SalvoController {
         return  self.getShips().size()  ==  0 ? new ArrayList<>() : self.getShips().stream().filter(ship -> ship.getType().equals(type)).findFirst().get().getShipLocations();
     }
 
-
-    //Mejora del getState
     private GameState getGameState (GamePlayer gamePlayer) {
 
         if (gamePlayer.getShips().size() == 0) {
             return GameState.PLACESHIPS;
         }
         if (gamePlayer.getGame().getGamePlayers().size() == 1){
-            return GameState.WAITING;
+            return GameState.WAITINGFOROPP;
         }
         if (gamePlayer.getGame().getGamePlayers().size() == 2) {
 

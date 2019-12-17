@@ -1,9 +1,8 @@
 package com.codeoftheweb.salvo.util;
 
-//task6
 public enum GameState {
 
-    WAITING,
+    WAITINGFOROPP,
     WAIT,
     PLAY,
     PLACESHIPS,

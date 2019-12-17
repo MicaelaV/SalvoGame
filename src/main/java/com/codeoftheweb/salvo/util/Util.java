@@ -6,7 +6,6 @@ import org.springframework.security.core.Authentication;
 import java.util.HashMap;
 import java.util.Map;
 
-//task6
 public class Util {
 
     public static boolean isGuest(Authentication  authentication){

@@ -91,7 +91,7 @@ function refreshGameView(_url) {
                 $('#placingShipsBoard').show('puff', 'slow');
             }
 
-            if (gamePlayerData.gameState === "WAITING"){
+            if (gamePlayerData.gameState === "WAITINGFOROPP"){
                 $('#battleGrids').show('puff', 'slow');
                 waitState = true;
                 setTimeout(
@@ -159,6 +159,19 @@ function refreshGameView(_url) {
                     '            </div>');
 
                 resetSalvoCellIds();
+
+/*   $('#salvoBlock').html('<div class="drag-zone">\n' +
+                      '                <ul>'+
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout1"><div class="draggable" id="salvo1"></div></div></li>\n' +
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout2"><div class="draggable" id="salvo2"></div></div></li>\n' +
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout3"><div class="draggable" id="salvo3"></div></div></li>\n' +
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout4"><div class="draggable" id="salvo4"></div></div></li>\n' +
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout5"><div class="draggable" id="salvo5"></div></div></li>\n' +
+                      '                <li><div class="textCenter"><button class="btn btn-warning" id="postSalvo">Fire Salvo!</button></div></li>\n' +
+                      '                </ul>+
+                      '            </div>');
+
+                  resetSalvoCellIds();*/
 
                 $('#postSalvo').click(function () {
                     makeSalvoJSON();
@@ -340,9 +353,7 @@ function postShipLocations (postUrl) {
                 Swal.fire({
                     type: 'success',
                     //title: 'Éxito',
-                    title: 'Ships Created!!',
-                    showConfirmButton: false,
-                    timer: 2000 //el tiempo que dura el mensaje en ms
+                    text: 'Ships Created!!',
                 });
             });
             setTimeout(

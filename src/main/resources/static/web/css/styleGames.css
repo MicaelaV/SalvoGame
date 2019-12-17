@@ -2,6 +2,7 @@ body {
     background: url(../img/back2.png);
     font-family: "Arial Black", Gadget, sans-serif;
     background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: auto;
 }
